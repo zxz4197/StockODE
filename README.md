@@ -4,7 +4,7 @@
 
 In the `preprocess` folder, you will find code related to data preprocessing.
 
-All data are under the data folder.(from Feng et al.)
+All data are under the [data folder](https://github.com/fulifeng/Temporal_Relational_Stock_Ranking/tree/master/data).(from Feng et al.)
 
 ## Running the Project
 
