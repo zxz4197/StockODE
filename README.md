@@ -4,6 +4,8 @@
 
 In the `preprocess` folder, you will find code related to data preprocessing.
 
+All data are under the data folder.(from Feng et al.)
+
 ## Running the Project
 
 Ensure that your system supports GPU and follow these steps to run the Stockode project(Refer to the Dependencies):
