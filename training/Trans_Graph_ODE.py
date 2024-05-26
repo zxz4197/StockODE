@@ -242,6 +242,7 @@ class Stock_ODE(torch.nn.Module):
         self.line1 = torch.nn.Linear(128, 64)
         self.mean_dense = torch.nn.Linear(192,64)
         self.W = torch.nn.Parameter(torch.nn.init.normal_(torch.Tensor(4,1026, 64), std=0.1).cuda())
+        self.mov = torch.nn.Linear(Stock_num, 9)
         self.output_in_dim=64
         self.output_out_dim=64
         self.std_dense = torch.nn.Sequential(torch.nn.Linear(128,64),torch.nn.Softplus(), torch.nn.Hardtanh(min_val=0.01, max_val=7.))
@@ -261,6 +262,7 @@ class Stock_ODE(torch.nn.Module):
         x=inputs
         x=torch.transpose(x,1,0)
         x=x*moving
+        moving = self.mov(moving)
         #x=x*self.W
         hidden_out, mu, logvar = self.encoder(x)
         #encoder_outputs = torch.cat([mu, hidden_out, logvar], -1)
