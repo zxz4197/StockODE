@@ -261,7 +261,7 @@ class Stock_ODE(torch.nn.Module):
         x=inputs
         x=torch.transpose(x,1,0)
         x=x*moving
-        x=x*self.W
+        #x=x*self.W
         hidden_out, mu, logvar = self.encoder(x)
         #encoder_outputs = torch.cat([mu, hidden_out, logvar], -1)
         encoder_outputs1 = self.line(hidden_out)
